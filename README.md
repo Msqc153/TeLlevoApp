@@ -63,7 +63,7 @@ Verifica que el archivo .env esté incluido en .gitignore para evitar que sea su
 ```
 .env
 ```
-##**Ejecución de la Aplicación**
+**Ejecución de la Aplicación**
 Ejecutar en el navegador:
 
 Inicia el servidor de desarrollo con el siguiente comando:
@@ -89,14 +89,14 @@ npm run lint: Analiza el código en busca de errores de estilo.
 Dependencias Principales
 Las principales tecnologías utilizadas en este proyecto son:
 
--Angular: Framework principal del proyecto.
--Ionic Framework: Herramientas para construir aplicaciones multiplataforma.
--Capacitor: Puente nativo para dispositivos móviles.
--RxJS: Manejo de programación reactiva.
+Angular: Framework principal del proyecto.
+Ionic Framework: Herramientas para construir aplicaciones multiplataforma.
+Capacitor: Puente nativo para dispositivos móviles.
+RxJS: Manejo de programación reactiva.
 ---
 
 Dependencias de Desarrollo
 
--Jasmine: Framework para pruebas unitarias.
--Karma: Herramienta para ejecutar pruebas.
--ESLint: Analizador de código para mantener un estilo consistente.
+Jasmine: Framework para pruebas unitarias.
+Karma: Herramienta para ejecutar pruebas.
+ESLint: Analizador de código para mantener un estilo consistente.
