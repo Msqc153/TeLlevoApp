@@ -38,57 +38,44 @@ Antes de instalar y ejecutar la aplicación, asegúrate de tener instalados los 
    git clone https://github.com/usuario/TeLlevoApp.git
    cd TeLlevoApp
 Instala las dependencias del proyecto:
-bash
-Copiar código
+```bash
 npm install
+```
 Configuración de Claves y Variables de Entorno
 La aplicación utiliza claves API para conectarse con servicios externos, como Google Maps y la API de Rick and Morty. Sigue estos pasos para configurar las claves:
 
 Crea un archivo .env en la raíz del proyecto:
 
-bash
-Copiar código
+```
 touch .env
+```
 Agrega las claves requeridas:
 
 Abre el archivo .env y agrega tus claves:
 env
-Copiar código
+```
 GOOGLE_MAPS_API_KEY=tu-clave-de-google-maps
 API_URL=https://rickandmortyapi.com/api/character
+```
 Asegúrate de proteger las claves sensibles:
 
 Verifica que el archivo .env esté incluido en .gitignore para evitar que sea subido al repositorio:
-plaintext
-Copiar código
+```
 .env
+```
 Ejecución de la Aplicación
 Ejecutar en el navegador:
 
 Inicia el servidor de desarrollo con el siguiente comando:
-bash
-Copiar código
+```
 ionic serve
+```
 Vista en el laboratorio de dispositivos:
 
 Para ver cómo se comporta la aplicación en diferentes plataformas:
-bash
-Copiar código
+```
 ionic serve --lab
-Ejecutar en dispositivos móviles:
-
-Sincroniza el proyecto con Capacitor:
-bash
-Copiar código
-ionic cap sync
-Ejecuta en Android:
-bash
-Copiar código
-ionic cap run android
-Ejecuta en iOS:
-bash
-Copiar código
-ionic cap run ios
+```
 Scripts Disponibles
 El proyecto tiene los siguientes comandos disponibles en el archivo package.json:
 
@@ -96,6 +83,7 @@ npm start: Inicia el servidor de desarrollo.
 npm run build: Genera los archivos para producción.
 npm run test: Ejecuta las pruebas unitarias con Karma.
 npm run lint: Analiza el código en busca de errores de estilo.
+
 Dependencias Principales
 Las principales tecnologías utilizadas en este proyecto son:
 
