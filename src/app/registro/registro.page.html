@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center-title">
+      <img src="assets/icon/logito.png" alt="Logo" style="height: 40px;">
+      TeLlevoApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+  <div id="registro-page">
+    <div class="logo-container">
+      <img src="assets/icon/TeLlevo.png" alt="Logotipo de la Empresa" class="logo" />
+    </div>
+    <div class="form-container">
+      <form [formGroup]="registroForm" (ngSubmit)="agregarUsuario()">
+        <ion-item>
+          <ion-label position="stacked">Nombre Completo</ion-label>
+          <ion-input formControlName="name" placeholder="Ingrese su nombre completo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Nombre de Usuario</ion-label>
+          <ion-input formControlName="username" placeholder="Ingrese su nombre de usuario"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Correo Electrónico</ion-label>
+          <ion-input formControlName="email" type="email" placeholder="Ingrese su correo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input formControlName="password" type="password" placeholder="Ingrese una contraseña">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Confirmar Contraseña</ion-label>
+          <ion-input formControlName="confirmpassword" type="password" placeholder="Confirme su contraseña">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tengo vehiculo</ion-label>
+          <ion-checkbox slot="end" formControlName="hasCar"></ion-checkbox>
+        </ion-item>
+        <div formGroupName="carDetails" *ngIf="registroForm.get('hasCar')?.value">
+          <ion-item>
+            <ion-label position="stacked">Patente</ion-label>
+            <ion-input formControlName="licensePlate" placeholder="Ingrese la patente del vehiculo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Modelo</ion-label>
+            <ion-input formControlName="model" placeholder="Ingrese modelo de vehiculo"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Capacidad</ion-label>
+            <ion-input type="number" formControlName="capacity" placeholder="Ingrese capacidad del vehiculo"></ion-input>
+          </ion-item>
+        </div>
+        <ion-button expand="block" type="submit" [disabled]="registroForm.invalid">Registrar</ion-button>
+      </form>
+    </div>
+  </div>  
+</ion-content>

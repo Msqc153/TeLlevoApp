@@ -1,0 +1,36 @@
+<ion-content id="main-content" [fullscreen]="true" scroll="true">
+  <div class="localizacion-page">
+
+    <div id="spacer">
+      <h1 class="map-title">Mapa</h1>
+    </div>
+
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+
+      <div id="trayecto">
+        <form [formGroup]="viajeForm" (ngSubmit)="programarViaje()">
+          
+            <ion-label position="stacked">Capacidad del Vehículo</ion-label>
+            <input type="number" formControlName="capacidad" placeholder="Número de pasajeros">
+          
+          
+            <ion-label position="stacked">Costo por Persona (CLP)</ion-label>
+            <input type="number" formControlName="costo" >
+
+            <ion-label position="stacked">Selecciona Fecha</ion-label>
+            <ion-datetime presentation="date" [firstDayOfWeek]="1" formControlName="fecha"></ion-datetime>
+
+            <ion-label position="stacked">Ingrese destino</ion-label>
+            <input type="text" id="autocomplete" placeholder="Ingresa una ubicación">
+
+            <ion-button expand="block" type="submit">Programar Viaje</ion-button>
+            <ion-button expand="block" (click)="calculaRuta()">Mostrar Ruta</ion-button>
+        </form>
+        
+      </div>
+        
+  </div>   
+     
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-content id="main-content" [fullscreen]="true">
+  <div id="reset-password-page">
+    <div class="logo-container">
+      <img src="assets/icon/TeLlevo.png" alt="Logotipo de la Empresa" class="logo" />
+    </div>
+    <div class="form-container">
+      <form [formGroup]="restablecerForm" (ngSubmit)="onLogin()">
+        <ion-item>
+          <ion-label position="stacked">Ingrese nueva contraseña:</ion-label>
+          <ion-input
+            labelPlacement="floating"
+            [clearInput]="true"
+            formControlName="password"
+            type="password"
+            placeholder="Ingrese contraseña"
+            maxlength="4"
+          >
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Reingrese nueva contraseña:</ion-label>
+          <ion-input
+            labelPlacement="floating"
+            [clearInput]="true"
+            formControlName="confirmPassword"
+            type="password"
+            placeholder="Reingrese contraseña"
+            maxlength="4"
+          >
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <div class="button-form">
+          <ion-button shape="round" expand="block" type="submit" [disabled]="!restablecerForm.valid"
+            >Reestablecer Contraseña</ion-button
+          >
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>

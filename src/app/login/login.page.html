@@ -1,0 +1,57 @@
+<ion-content id="main-content" [fullscreen]="true">
+  <div id="login-page">
+    <div class="logo-container">
+      <img src="assets/icon/TeLlevo.png" alt="Logotipo de la Empresa" />
+    </div>
+    <div class="form-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <ion-item>
+          <ion-label position="stacked">Usuario:</ion-label>
+          <ion-input
+            formControlName="username"
+            [clearInput]="true"
+            placeholder="Ingrese usuario"
+            maxlength="8"
+          ></ion-input>
+        </ion-item>
+        <ion-text
+          color="danger"
+          *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
+        >
+          El nombre de usuario debe tener entre 3 y 8 caracteres.
+        </ion-text>
+
+        <ion-item>
+          <ion-label position="stacked">Contraseña:</ion-label>
+          <ion-input
+            formControlName="password"
+            type="password"
+            [clearInput]="true"
+            placeholder="Ingrese contraseña"
+            maxlength="4"
+          ><ion-input-password-toggle slot="end"></ion-input-password-toggle></ion-input>
+        </ion-item>
+        <ion-text
+          color="danger"
+          *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        >
+          La contraseña debe tener exactamente 4 dígitos.
+        </ion-text>
+
+        <div class="checkbox-container">
+          <ion-checkbox formControlName="rememberMe"></ion-checkbox>
+          <ion-label>Recuérdame</ion-label>
+        </div>
+
+        <div class="button-form">
+          <ion-button shape="round" expand="block" type="submit" [disabled]="!loginForm.valid">Ingresar</ion-button>
+          <ion-button shape="round" expand="block" type="button" (click)="restablecerPass()">Restablecer Contraseña</ion-button>
+        </div>
+        <p class="register-text">
+          ¿No tienes cuenta aún?
+          <a [routerLink]="['/menu/registro']" class="register-link">Regístrate acá</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</ion-content>
