@@ -63,7 +63,9 @@ Verifica que el archivo .env esté incluido en .gitignore para evitar que sea su
 ```
 .env
 ```
-**Ejecución de la Aplicación**
+## **Ejecución de la Aplicación**
+
+
 Ejecutar en el navegador:
 
 Inicia el servidor de desarrollo con el siguiente comando:
@@ -84,7 +86,7 @@ npm start: Inicia el servidor de desarrollo.
 npm run build: Genera los archivos para producción.
 npm run test: Ejecuta las pruebas unitarias con Karma.
 npm run lint: Analiza el código en busca de errores de estilo.
----
+
 
 Dependencias Principales
 Las principales tecnologías utilizadas en este proyecto son:
@@ -93,7 +95,7 @@ Angular: Framework principal del proyecto.
 Ionic Framework: Herramientas para construir aplicaciones multiplataforma.
 Capacitor: Puente nativo para dispositivos móviles.
 RxJS: Manejo de programación reactiva.
----
+
 
 Dependencias de Desarrollo
 
