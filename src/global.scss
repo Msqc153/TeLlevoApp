@@ -54,3 +54,283 @@
     --size: 26px;
     --checkbox-background-checked: #f7b31c;
   }
+
+  ion-item[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+/* Estilos Globales */
+body, ion-app {
+  background-color: var(--ion-background-color);
+  font-family: 'Arial', sans-serif;
+}
+
+ion-item[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+ion-checkbox {
+  --size: 26px;
+  --checkbox-background-checked: var(--ion-color-secondary);
+}
+
+/* =========================================================
+ * Login
+ * ========================================================= */
+/* Página de Login */
+#login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: var(--ion-background-color);
+  text-align: center;
+}
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--ion-color-tertiary);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.logo-container img {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --color: #000000;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.button-form ion-button {
+  --border-radius: 20px;
+  margin-top: 15px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 8px;
+}
+
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: var(--ion-text-color);
+}
+
+.register-link {
+  color: var(--ion-color-primary);
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Tab Bar (Barra Inferior) */
+ion-tab-bar {
+  background-color: var(--ion-color-tertiary);
+  border-top: 1px solid var(--ion-color-medium);
+}
+
+ion-tab-button {
+  --color: var(--ion-color-primary);
+  --color-selected: var(--ion-color-secondary);
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+/* Ajuste responsivo para pantallas pequeñas */
+@media (max-width: 480px) {
+  #login-page {
+    padding: 15px;
+  }
+
+  .form-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .logo-container img {
+    max-width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .register-text, .register-link {
+    font-size: 12px;
+  }
+}
+
+/* =========================================================
+ * Registro de Usuario
+ * ========================================================= */
+#registro-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--ion-color-tertiary);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================================
+ * Programar Viaje
+ * ========================================================= */
+#map-container {
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  border: 2px solid var(--ion-color-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#trayecto {
+  font-size: 16px;
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#trayecto input {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#trayecto ion-button {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-tertiary);
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+/* =========================================================
+ * Perfil del Usuario
+ * ========================================================= */
+#perfil-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--ion-color-tertiary);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+ * Menú
+ * ========================================================= */
+.menu-list {
+  --background: var(--ion-color-primary);
+  border-radius: 10px;
+}
+
+.menu-item {
+  --background: var(--ion-color-primary);
+  --color: var(--ion-color-tertiary);
+  margin-bottom: 10px;
+}
+
+.menu-item ion-icon {
+  font-size: 24px;
+  color: var(--ion-color-secondary)!important;
+}
+
+ion-menu {
+  --background: var(--ion-color-tertiary);
+}
+
+/* =========================================================
+ * Home
+ * ========================================================= */
+#container-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
+
+.text-container h1 {
+  font-size: 24px;
+  color: var(--ion-color-primary);
+}
+
+.text-container p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ion-text-color);
+}
+
+/* =========================================================
+ * Responsividad
+ * ========================================================= */
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .logo-container img {
+    max-width: 150px;
+  }
+
+  .register-text, .register-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  .logo-container img {
+    max-width: 120px;
+  }
+}
