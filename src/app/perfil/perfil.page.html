@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center-title">
+      <img src="assets/icon/logito.png" alt="Logo" style="height: 40px;">
+      TeLlevoApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+  <div id="perfil-page">
+    <div class="form-container">
+      <div *ngIf="usuarioActual; else noUser">
+        <h2 class="form-title">¡Bienvenido {{ usuarioActual.name }}!</h2>
+        <p><strong>Nombre de Usuario:</strong> {{ usuarioActual.username }}</p>
+        <p><strong>Correo Electrónico:</strong> {{ usuarioActual.email }}</p>
+        <p><strong>Tiene Vehículo:</strong> {{ usuarioActual.hasCar ? 'Sí' : 'No' }}</p>
+        <div *ngIf="usuarioActual.hasCar">
+          <p><strong>Detalles del Vehículo:</strong></p>
+          <ul>
+            <li><strong>Patente:</strong> {{ usuarioActual.carDetails.licensePlate }}</li>
+            <li><strong>Modelo:</strong> {{ usuarioActual.carDetails.model }}</li>
+            <li><strong>Capacidad:</strong> {{ usuarioActual.carDetails.capacity }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <ng-template #noUser>
+        <p>No hay información disponible. Por favor, inicia sesión.</p>
+      </ng-template>
+    </div>
+  </div>
+</ion-content>

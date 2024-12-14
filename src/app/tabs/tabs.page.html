@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center-title">
+      <img src="assets/icon/logito.png" alt="Logo" style="height: 40px;">
+      TeLlevoApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="main-content" [fullscreen]="true">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+
+      <ion-tab-button *ngIf="tipoUsuario === 'pasajero'" tab="localizacion">
+        <ion-icon name="search-outline"></ion-icon>
+        <ion-label>Buscar viaje</ion-label>
+      </ion-tab-button>
+      
+      <ion-tab-button *ngIf="tipoUsuario === 'conductor'" tab="programaviaje">
+        <ion-icon name="location"></ion-icon>
+        <ion-label>Programar Viaje</ion-label>
+      </ion-tab-button>
+
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

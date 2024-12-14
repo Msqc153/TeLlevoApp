@@ -1,0 +1,82 @@
+<ion-content id="main-content" [fullscreen]="true" scroll="">
+  <ion-content [fullscreen]="true">
+    <div class="header">
+      <h1>Viajes Disponibles</h1>
+    </div>
+
+    <div *ngIf="viajes.length === 0" class="no-viajes">
+      <p>No hay viajes disponibles.</p>
+    </div>
+    
+
+    <ion-content id="viajes">
+
+      <form [formGroup]="filtroForm" (ngSubmit)="filtrarViajes()">
+        <ion-item>
+          <ion-label>Fecha</ion-label>
+          <ion-datetime locale="es-ES"
+            displayFormat="DD/MM/YYYY"
+            placeholder="Selecciona una fecha"
+            formControlName="fecha">
+            <span slot="time-label">Hora</span>
+          </ion-datetime>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Destino</ion-label>
+          <input
+            placeholder="Ingresa destino"
+            formControlName="ubicacion">
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Cupos disponibles</ion-label>
+          <input
+            type="number"
+            placeholder="Ej: 2"
+            formControlName="cupos">
+        </ion-item>
+    
+        <ion-button expand="block" type="submit" color="primary">
+          Aplicar Filtro
+        </ion-button>
+        <ion-button expand="block" type="button" color="light" (click)="resetearFiltros()">
+          Restablecer Filtros
+        </ion-button>
+
+      </form>
+
+      <ion-item *ngFor="let viaje of (viajesFiltrados.length > 0 ? viajesFiltrados : viajes)">
+        <ion-label>
+          <h2>Destino: {{ viaje.destino }}</h2>
+          <p>Conductor: {{ viaje.conductor }}</p>
+          <p>Fecha: {{ viaje.fecha }}</p>
+          <p>Costo: {{ viaje.montoPorPasajero }}</p>
+          <p>Cupos disponibles: {{ viaje.capacidadDisponible }}</p>
+        </ion-label>
+
+        <div class="ruta-imagen-container">
+          <img *ngIf="viaje.rutaImagen" [src]="viaje.rutaImagen" alt="Ruta del viaje" class="ruta-imagen" />
+        </div>
+
+        <ion-button
+          color="primary"
+          (click)="tomarViaje(viaje.identificador)"
+          [disabled]="viaje.capacidadDisponible <= 0"
+        >
+          Tomar Viaje
+        </ion-button>
+      </ion-item>
+      
+      <!-- Botón de cancelar y temporizador -->
+      <div *ngIf="viajeTomado">
+        <p>Viaje tomado: {{ viajeTomado.destino }}</p>
+        <p>Lugar de reunión: {{ viajeTomado.lugarReunion }}</p>
+        <p>Tiempo restante para cancelar: {{ tiempoRestante | secondsToTime }}</p>
+        <ion-button color="danger" (click)="cancelarViaje(viajeTomado.identificador)">Cancelar Viaje</ion-button>
+      </div>
+      <div id="spacer">
+        <h1 class="uwu"></h1>
+      </div>
+  </ion-content> 
+</ion-content>

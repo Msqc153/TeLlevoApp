@@ -1,0 +1,83 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la pantalla */
+  background-color: var(--ion-background-color);
+}
+
+/* Contenedor principal */
+#container-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: center; /* Centrar verticalmente */
+  text-align: center;
+  height: 100%; /* Asegura que ocupe toda la pantalla */
+  padding: 20px;
+  gap: 20px; /* Espaciado entre los elementos */
+}
+
+/* Imagen del logo */
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 250px; /* Ajusta el tamaño del logo */
+  height: auto;
+}
+
+/* Estilos del texto */
+.text-container {
+  max-width: 600px;
+}
+
+.text-container h1 {
+  font-size: 24px;
+  color: #002138; /* Azul oscuro */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 16px;
+  line-height: 1.5; /* Mejora la lectura */
+  color: #333;
+  text-align: center; /* Centra el texto */
+}
+
+/* Botones principales */
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre las filas */
+  width: 90%;
+  max-width: 500px; /* Limita el ancho de los botones */
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background-color: #002138; /* Azul oscuro */
+  color: #f7b31c; /* Naranja */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  font-size: 16px;
+  gap: 10px; /* Espaciado entre ícono y texto */
+}
+
+.feature-row ion-icon {
+  font-size: 24px;
+  color: #f7b31c; /* Naranja */
+}

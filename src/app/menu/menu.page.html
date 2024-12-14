@@ -1,0 +1,57 @@
+
+
+<ion-menu side="start" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-list class="menu-list">
+      <ion-menu-toggle *ngIf="!isLoggedIn">
+        <ion-item class="menu-item" href="/menu/login">
+          <ion-icon name="log-in" slot="start"></ion-icon>
+          <ion-label>Inicia Sesión</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle *ngIf="isLoggedIn">
+        <ion-item class="menu-item" href="/menu/home">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle *ngIf="isLoggedIn">
+        <ion-item class="menu-item" href="/menu/perfil" >
+          <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+          <ion-label>Perfil</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle *ngIf="isLoggedIn">
+        <ion-item class="menu-item" href="/menu/tabs">
+          <ion-icon name="car-outline" slot="start"></ion-icon>
+          <ion-label>Viajes</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle *ngIf="isLoggedIn">
+        <ion-item class="menu-item" (click)="logout()">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Cerrar Sesión</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>  
+</ion-menu>
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center-title">
+      <img src="assets/icon/logito.png" alt="Logo" style="height: 40px;">
+      TeLlevoApp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-router-outlet id="main-content"></ion-router-outlet>

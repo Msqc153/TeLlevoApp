@@ -1,0 +1,5 @@
+ion-item[disabled] {
+    opacity: 0.5; /* Reduce la opacidad */
+    pointer-events: none; /* Evita que sea clickeable */
+    cursor: not-allowed; /* Cambia el cursor */
+  }
