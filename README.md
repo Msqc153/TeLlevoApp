@@ -93,8 +93,4 @@ Enlace al Repositorio
 Encuentra el código fuente del proyecto en GitHub:
 TeLlevoApp Repository
 
-Entregables
-Informe del Proyecto: Documentación completa del desarrollo.
-Enlace al Repositorio de GitHub: Incluye el código fuente y documentación.
-Archivo APK: Generado desde Android Studio para pruebas.
-Código Fuente: Incluido como archivo comprimido (.zip o .tar.gz)
+
